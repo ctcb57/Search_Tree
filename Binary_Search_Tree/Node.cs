@@ -8,9 +8,9 @@ namespace Binary_Search_Tree
 {
     class Node
     {
-        int data;
-        Node leftChild;
-        Node rightChild;
+        public int data;
+        public Node leftChild;
+        public Node rightChild;
         public Node link;
 
         public Node (int data)

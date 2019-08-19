@@ -8,32 +8,69 @@ namespace Binary_Search_Tree
 {
     class Search_Tree
     {
-        Node start;
-        Node tail;
+        Node root;
+        Node current;
+        Node parent;
+
+
+        public Search_Tree()
+        {
+            root = null;   
+        }
 
         public void AddToTree(int numberToAdd)
         {
-
-        }
-
-        public void Insert_At_End( int data)
-        {
-            Node node = new Node(data);
-            if(start == null)
+            Node node = new Node(numberToAdd);
+            node.data = numberToAdd;
+            if(root == null)
             {
-                start = null;
-                tail = node;
+                root = node;
+                return;
             }
             else
             {
-                tail.link = node;
-                tail = node;
+                current = root;
+                while (true)
+                {
+                    parent = current;
+                    if(numberToAdd <= current.data)
+                    {
+                        current = current.leftChild;
+                        if(current == null)
+                        {
+                            parent.leftChild = node;
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        current = current.rightChild;
+                        if(current == null)
+                        {
+                            parent.rightChild = node;
+                            return;
+                        }
+                    }
+                }
             }
         }
 
         public void Search(int searchNumber)
         {
+            if(searchNumber == root.data)
+            {
+                Console.WriteLine("Node is present");
+                Console.ReadLine();
+                return;
+            }
+            else
+            {
+                current = root;
+                while (true)
+                {
 
+                }
+            }
         }
     }
 }
