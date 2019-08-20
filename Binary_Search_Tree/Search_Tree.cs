@@ -57,20 +57,57 @@ namespace Binary_Search_Tree
 
         public void Search(int searchNumber)
         {
-            if(searchNumber == root.data)
+            if(root == null)
             {
-                Console.WriteLine("Node is present");
+                Console.WriteLine("No result found");
                 Console.ReadLine();
                 return;
             }
-            else
+            current = root;
+            if(current.data == searchNumber)
             {
-                current = root;
-                while (true)
+                Console.WriteLine("Number located in search tree");
+                Console.ReadLine();
+                return;
+            }
+            while (true)
+            {
+                parent = current;
+                if(searchNumber < parent.data)
                 {
-
+                    current = parent.leftChild;
+                    if(current == null)
+                    {
+                        Console.WriteLine("No result found");
+                        Console.ReadLine();
+                        return;
+                    }
+                    else if (searchNumber == current.data)
+                    {
+                        Console.WriteLine("Number located in search tree");
+                        Console.ReadLine();
+                        return;
+                    }
+                }
+                else
+                {
+                    current = parent.rightChild;
+                    if(current == null)
+                    {
+                        Console.WriteLine("No result found");
+                        Console.ReadLine();
+                        return;
+                    }
+                    else if (searchNumber == current.data)
+                    {
+                        Console.WriteLine("Number located in search tree");
+                        Console.ReadLine();
+                        return;
+                    }
                 }
             }
+                
+            
         }
     }
 }

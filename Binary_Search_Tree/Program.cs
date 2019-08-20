@@ -18,6 +18,7 @@ namespace Binary_Search_Tree
             test.AddToTree(112);
             test.AddToTree(80);
             test.AddToTree(140);
+            test.Search(14);
         }
     }
 }
