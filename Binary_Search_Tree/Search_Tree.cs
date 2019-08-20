@@ -55,20 +55,20 @@ namespace Binary_Search_Tree
             }
         }
 
-        public void Search(int searchNumber)
+        public bool Search(int searchNumber)
         {
             if(root == null)
             {
                 Console.WriteLine("No result found");
                 Console.ReadLine();
-                return;
+                return false;
             }
             current = root;
             if(current.data == searchNumber)
             {
-                Console.WriteLine("Number located in search tree");
+                Console.WriteLine($"{searchNumber} located in search tree");
                 Console.ReadLine();
-                return;
+                return true;
             }
             while (true)
             {
@@ -80,13 +80,13 @@ namespace Binary_Search_Tree
                     {
                         Console.WriteLine("No result found");
                         Console.ReadLine();
-                        return;
+                        return false;
                     }
                     else if (searchNumber == current.data)
                     {
-                        Console.WriteLine("Number located in search tree");
+                        Console.WriteLine($"{searchNumber} located in search tree");
                         Console.ReadLine();
-                        return;
+                        return true;
                     }
                 }
                 else
@@ -96,13 +96,13 @@ namespace Binary_Search_Tree
                     {
                         Console.WriteLine("No result found");
                         Console.ReadLine();
-                        return;
+                        return false;
                     }
                     else if (searchNumber == current.data)
                     {
-                        Console.WriteLine("Number located in search tree");
+                        Console.WriteLine($"{searchNumber} located in search tree");
                         Console.ReadLine();
-                        return;
+                        return true;
                     }
                 }
             }
